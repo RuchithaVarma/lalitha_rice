@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "dgSpecHash": "9flsZ4M2AMI=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\robogenix\\lalithaaa\\LalithaRice.Web\\LalithaRice.Web.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.OpenApi (>= 7.0.12)' for 'net7.0'. PackageSourceMapping is enabled, the following source(s) were not considered: nuget.org, Package source.",
+      "libraryId": "Microsoft.AspNetCore.OpenApi",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Swashbuckle.AspNetCore (>= 6.5.0)' for 'net7.0'. PackageSourceMapping is enabled, the following source(s) were not considered: nuget.org, Package source.",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Ref (= 7.0.20)' for 'net7.0'. PackageSourceMapping is enabled, the following source(s) were not considered: nuget.org, Package source.",
+      "libraryId": "Microsoft.NETCore.App.Ref",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.WindowsDesktop.App.Ref (= 7.0.20)' for 'net7.0'. PackageSourceMapping is enabled, the following source(s) were not considered: nuget.org, Package source.",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 7.0.20)' for 'net7.0'. PackageSourceMapping is enabled, the following source(s) were not considered: nuget.org, Package source.",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Host.win-x64 (= 7.0.20)' for 'net7.0'. PackageSourceMapping is enabled, the following source(s) were not considered: nuget.org, Package source.",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
+}

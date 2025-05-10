@@ -1,0 +1,6 @@
+@LalithaRice.Web_HostAddress = http://localhost:5201
+
+GET {{LalithaRice.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
