@@ -1,0 +1,165 @@
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Our Products - Lalitha Rice";
+}
+
+<!-- Hero Section -->
+<section class="hero-section text-center" style="height: 60vh;">
+    <div class="container">
+        <h1 class="display-4 mb-4">Our Products</h1>
+        <p class="lead">Discover Our Premium Rice Varieties</p>
+    </div>
+</section>
+
+<!-- Products Catalog -->
+<section class="py-5">
+    <div class="container">
+        <!-- Product Categories -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <ul class="nav nav-pills justify-content-center mb-4" id="productTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#all">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#premium">Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#classic">Classic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#healthy">Healthy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4 mb-4 product-item" data-category="@product.Category.ToLower()">
+                    <div class="card product-card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name">
+                            @if (product.IsAvailable)
+                            {
+                                <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger position-absolute top-0 end-0 m-3">Out of Stock</span>
+                            }
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div>
+                                    <p class="card-text mb-0"><small class="text-muted">@product.Weight</small></p>
+                                    <h4 class="text-warning mb-0">₹@product.Price</h4>
+                                </div>
+                                <button class="btn btn-outline-warning">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Product Features -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center section-title mb-5">Why Choose Our Rice</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="feature-box text-center">
+                    <i class="fas fa-certificate fa-3x text-warning mb-3"></i>
+                    <h4>Premium Quality</h4>
+                    <p>Hand-picked premium quality grains</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="feature-box text-center">
+                    <i class="fas fa-heart fa-3x text-warning mb-3"></i>
+                    <h4>Health Benefits</h4>
+                    <p>Rich in nutrients and minerals</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="feature-box text-center">
+                    <i class="fas fa-leaf fa-3x text-warning mb-3"></i>
+                    <h4>Natural Process</h4>
+                    <p>No artificial processing</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="feature-box text-center">
+                    <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
+                    <h4>Quality Assured</h4>
+                    <p>Rigorous quality checks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bulk Order Section -->
+<section class="py-5 bg-warning text-dark">
+    <div class="container text-center">
+        <h2 class="mb-4">Looking for Bulk Orders?</h2>
+        <p class="lead mb-4">Special prices available for wholesale purchases</p>
+        <a href="/Home/Contact" class="btn btn-dark btn-lg">Contact for Wholesale</a>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Product filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('#productTabs .nav-link');
+            const products = document.querySelectorAll('.product-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Get category from href
+                    const category = tab.getAttribute('href').replace('#', '');
+                    
+                    // Filter products
+                    products.forEach(product => {
+                        if (category === 'all' || product.dataset.category === category) {
+                            product.style.display = 'block';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Add to Cart animation
+        document.querySelectorAll('.btn-outline-warning').forEach(button => {
+            button.addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-check"></i> Added';
+                this.classList.remove('btn-outline-warning');
+                this.classList.add('btn-success');
+                
+                setTimeout(() => {
+                    this.innerHTML = 'Add to Cart';
+                    this.classList.remove('btn-success');
+                    this.classList.add('btn-outline-warning');
+                }, 2000);
+            });
+        });
+    </script>
+}

@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Home";
+}
+@model IEnumerable<Product>
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-3 mb-4">Premium Quality Rice</h1>
+        <p class="lead mb-4">Bringing tradition and taste to your table since 1990</p>
+        <a href="#products" class="btn btn-warning btn-lg">Explore Products</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center section-title mb-5">Why Choose Lalitha Rice</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-box">
+                    <i class="fas fa-award fa-3x text-warning mb-3"></i>
+                    <h4>Premium Quality</h4>
+                    <p>Carefully selected and processed for the finest quality</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-box">
+                    <i class="fas fa-truck fa-3x text-warning mb-3"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>Quick and reliable delivery to your doorstep</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-box">
+                    <i class="fas fa-leaf fa-3x text-warning mb-3"></i>
+                    <h4>100% Natural</h4>
+                    <p>No artificial ingredients or preservatives</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="py-5">
+    <div class="container">
+        <h2 class="text-center section-title mb-5">Our Products</h2>
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <p class="card-text"><small class="text-muted">@product.Weight</small></p>
+                            <h6 class="card-subtitle mb-2 text-warning">₹@product.Price</h6>
+                            <a href="#" class="btn btn-outline-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="section-title">Our Story</h2>
+                <p class="lead">For over three decades, Lalitha Rice has been delivering premium quality rice to Indian households.</p>
+                <p>We take pride in our traditional processing methods combined with modern technology to ensure the highest quality standards.</p>
+                <a href="#" class="btn btn-warning">Read More</a>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/about.jpg" alt="About Us" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-warning text-dark text-center">
+    <div class="container">
+        <h2 class="mb-4">Ready to Experience Premium Quality Rice?</h2>
+        <p class="lead mb-4">Contact us today for bulk orders and business inquiries</p>
+        <a href="#" class="btn btn-dark btn-lg">Contact Us</a>
+    </div>
+</section>

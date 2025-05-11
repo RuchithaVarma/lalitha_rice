@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "Contact Us - Lalitha Rice";
+}
+
+<!-- Hero Section -->
+<section class="hero-section text-center" style="height: 60vh;">
+    <div class="container">
+        <h1 class="display-4 mb-4">Contact Us</h1>
+        <p class="lead">We'd Love to Hear from You</p>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-7 mb-4">
+                <div class="contact-form bg-white p-4 rounded shadow-sm">
+                    <h3 class="section-title mb-4">Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="message">Your Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <div class="bg-light p-4 rounded shadow-sm h-100">
+                    <h3 class="section-title mb-4">Get in Touch</h3>
+                    
+                    <div class="contact-info mb-4">
+                        <h5><i class="fas fa-map-marker-alt text-warning me-2"></i> Our Location</h5>
+                        <p class="mb-0">123 Rice Mill Road</p>
+                        <p>Chennai, Tamil Nadu 600001</p>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <h5><i class="fas fa-phone text-warning me-2"></i> Phone Numbers</h5>
+                        <p class="mb-0">Sales: +91 123 456 7890</p>
+                        <p class="mb-0">Support: +91 098 765 4321</p>
+                        <p>Wholesale: +91 123 789 4560</p>
+                    </div>
+
+                    <div class="contact-info mb-4">
+                        <h5><i class="fas fa-envelope text-warning me-2"></i> Email</h5>
+                        <p class="mb-0">info@lalitharice.com</p>
+                        <p>sales@lalitharice.com</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <h5><i class="fas fa-clock text-warning me-2"></i> Business Hours</h5>
+                        <p class="mb-0">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h3 class="section-title text-center mb-4">Find Us on Map</h3>
+        <div class="map-container rounded shadow-sm">
+            <!-- Replace with actual map embed code -->
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8969083545227!2d80.27172611482484!3d13.083248290773666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620843881619!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-warning text-dark">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to Place a Bulk Order?</h2>
+        <p class="lead mb-4">Our team is ready to assist you with wholesale inquiries</p>
+        <a href="tel:+911237894560" class="btn btn-dark btn-lg">Call Now</a>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+    </script>
+}
