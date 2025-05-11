@@ -3,7 +3,7 @@ import { Container, Typography, Grid, Card, CardContent, CardMedia, Box } from '
 
 const products = [
   {
-    name: 'Premium Basmati Rice',
+    name: 'Premium Basmati Rice12',
     description: 'Long-grain aromatic rice perfect for biryanis and pulao',
     image: '/images/basmati.jpg',
     price: '₹120/kg'
